@@ -10,18 +10,20 @@
 
 
 function arrangeTheNums(arr) {
-  let zero = 0;
   
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] === '0') {
+      for (let j = 0;j < arr.length;j++)
+      if(arr[j] === '1'){
       const temp = arr[i];
-      arr[i] = arr[zero];
-      arr[zero] = temp;
+      arr[i] = arr[j];
+      arr[j] = temp;
       zero++;
     }
   }
 
-  return arr.join('');
+  return arr.join(' ');
+}
 }
 
 const original = '111000111100011100'.split('');
