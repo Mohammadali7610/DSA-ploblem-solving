@@ -11,19 +11,19 @@
 
 
 function findKthLargest(nums, k) {
-    let kthLargest = 0;
+    let kthLargest = null;
   
     for (let i = 0; i < k; i++) {
       let maxIndex = 0;
   
       for (let j = 1; j < nums.length; j++) {
-        if (nums[j] !== 0 && (nums[j] > nums[maxIndex])) {
+        if (nums[j] !== null && (nums[j] > nums[maxIndex])) {
           maxIndex = j;
         }
       }
   
       kthLargest = nums[maxIndex] ;
-      nums[maxIndex] = 0; 
+      nums[maxIndex] = null; 
     }
     return kthLargest;
 }
