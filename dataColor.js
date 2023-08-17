@@ -27,6 +27,10 @@ const data = [
   },
 ];
 
-const filteredData = data.filter(item => colors.includes(item.color));
+// const filteredData = data.filter(item => colors.includes(item.color));
+
+// console.log(filteredData);
+
+const filteredData = data.reduce((result, item) => colors.includes(item.color) ? [result, item] : result);
 
 console.log(filteredData);
