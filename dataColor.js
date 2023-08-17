@@ -27,10 +27,10 @@ const data = [
   },
 ];
 
-// const filteredData = data.filter(item => colors.includes(item.color));
+const filteredData1 = data.filter(item => colors.includes(item.color));
 
-// console.log(filteredData);
+console.log(filteredData1);
 
-const filteredData = data.reduce((result, item) => colors.includes(item.color) ? [result, item] : result);
+const filteredData2 = data.reduce((result, item) => colors.includes(item.color) ? [result, item] : result);
 
-console.log(filteredData);
+console.log(filteredData2);
