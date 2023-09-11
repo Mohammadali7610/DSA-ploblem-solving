@@ -27,7 +27,7 @@ const data = [
   },
 ];
 
-const filteredData1 = data.filter(item => colors.includes(item.color));
+const filteredData1 = data.some(item => colors.includes(item.color));
 
 console.log(filteredData1);
 

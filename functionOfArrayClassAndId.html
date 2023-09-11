@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div id="header">
+        <ul id="header" class="header-list">
+          <li class="footer-list-item para">Home Top</li>
+          <li class="footer-list-item para">About Top</li>
+          <li class="footer-list-item para">Contact Top</li>
+        </ul>
+      </div>
+      <section>
+        <div>
+          <div>
+            <div>
+              <div>
+                <p class="para">Hello para from nested</p>
+              </div>
+            </div>
+            <p class="para">Hello para from nested 2</p>
+            <p class="para">Hello para from nested 3</p>
+            <p class="para">Hello para from nested 4</p>
+            <p class="para">Hello para from nested 5</p>
+          </div>
+        </div>
+      </section>
+      <div id="footer">
+        <ul id="footer" class="footer-list">
+          <li id="footer" class="footer-list-item">Home</li>
+          <li id="footer" class="footer-list-item">About</li>
+          <li id="footer" class="footer-list-item">Contact</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  /*  const paraElems = document.getElementsByClassName("para");
+  console.log("paraElems: ", paraElems);
+
+  for (let item of paraElems) {
+    item.style.color = "red";
+  } */
+
+  function getCustomElementsByClassName(classKey) {
+    // Write logic over here
+
+    const classArray = [];
+    if(!classKey){
+      return null
+    }
+     function traverse(element){
+    const children = element.children;
+    for (let i = 0; i < children.length;  i++){
+      const child = children[i];
+                    if (child.classList.contains(classKey)) {
+                        classArray.push(child);
+                    }
+          traverse(child);
+    }
+  }
+  traverse(document.body);
+
+  return classArray
+}
+
+  const list = getCustomElementsByClassName("para");
+  console.log("class-List" , list)
+</script>
+
+
+
+<script>
+   function getCustomElementsByIdName(idKey){
+      const idArray = [];
+      if(!idKey){
+        return null;
+      }
+      function traverse(element){
+    const children = element.children;
+    for (let i = 0; i < children.length;  i++){
+      const child = children[i];
+          if (child.id === idKey) {
+            idArray.push(child.id)
+            return idArray
+          }
+          traverse(child);
+    }
+  }
+  traverse(document.body);
+
+      return idArray
+   }
+   const idList = getCustomElementsByIdName("footer");
+  console.log("id-List" , idList)
+</script>
